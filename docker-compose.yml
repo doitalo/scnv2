@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  spring-boot-jpa-app:
+    image: orchestration-stoneground-image
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8087:8080
+    volumes:
+      - /data/orchestration
+    environment:
+      - URL=${URLSCANIA}
+      - TOKEN=${TOKENSCANIA}
+      
